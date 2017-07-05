@@ -10,12 +10,22 @@ import UIKit
 
 @IBDesignable class GraphView: UIView {
     
+    
+    
     //1 - the properties for the gradient
     @IBInspectable var startColor: UIColor = UIColor.red
     @IBInspectable var endColor: UIColor = UIColor.green
     
     override func draw(_ rect: CGRect) {
         
+        let width = rect.width
+        let height = rect.height
+        
+        //set up background clipping area
+        var path = UIBezierPath(roundedRect: rect,
+                                byRoundingCorners: UIRectCorner.allCorners,
+                                cornerRadii: CGSize(width: 8.0, height: 8.0))
+        path.addClip()
         
         //2 - get the current context
         let context = UIGraphicsGetCurrentContext()
@@ -28,6 +38,7 @@ import UIKit
         let colorLocations:[CGFloat] = [0.0, 1.0]
         
         //5 - create the gradient
+
         let gradient = CGGradient(colorsSpace: colorSpace,
                                   colors: colors as CFArray,
                                   locations: colorLocations)

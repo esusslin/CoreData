@@ -20,6 +20,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("graph view")
+        print(graphView.center)
+        
+        print("counter! view")
+        print(counterView.center)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
