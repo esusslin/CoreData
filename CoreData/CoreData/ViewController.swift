@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterLabel: UILabel!
     
 
+    @IBOutlet weak var averageWaterDrunk: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
